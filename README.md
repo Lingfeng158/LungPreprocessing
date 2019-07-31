@@ -17,7 +17,7 @@ Command example:
 ```
 flirt -in invol -ref refvol -out outvol -dof 6
 ```
-* ANTs: set up ANTs environment and use SyNQuick. Read antsReisterationSynQuick.sh and this [artical](https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call) for full command explanation.   
+* ANTs: set up ANTs environment and use SyNQuick. Read ```antsRegisterationSynQuick.sh``` and this [artical](https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call) for full command explanation.   
 Set "initial-moving-transform" to 0 for IMRT data; try different options under "initial-moving-transform" for desired results.  
 For faster registeration add```-t a```or ```-t r```after the command.  
 Command example:
