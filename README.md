@@ -3,7 +3,7 @@ A series of operations on raw lung data ensuring data quality.
 Created by Lingfeng 31/07/2019. Email lingfeng.li@vanderbilt.edu
 
 ## Step 1
-If data come in as DICOM format, ensure that DICOM files are complete and data is valid (containing a full lung). Then convert DICOM data to Nifti. Initial QA tool is created by Riqiang, link is [HERE](https://github.com/MASILab/QA_tool). A composite tool developed based on Riqiang's QA tool is included. For fast processing, the composite tool can be wrapped differently to accommodate different data structure. 
+If data come in as DICOM format, ensure that DICOM files are complete and data is valid (containing a full lung). Then convert DICOM data to Nifti. Initial QA tool is created by Riqiang Gao, link is [HERE](https://github.com/MASILab/QA_tool). A composite tool developed based on Riqiang's QA tool is included, need to use in conjunction with original tool. For fast processing, the composite tool can be wrapped differently to accommodate different data structure. 
 
 ## Step 2
 Segment lung from initial lung data.   
