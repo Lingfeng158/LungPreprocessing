@@ -1,9 +1,11 @@
 # LungPreprocess
 A series of operations on raw lung data ensuring data quality.   
-Created by Lingfeng 31/07/2019. Email lingfeng.li@vanderbilt.edu
+Created by Lingfeng Li  
+Email: lingfeng.li@vanderbilt.edu  
+Last edit:  31/07/2019.
 
 ## Step 1
-If data come in as DICOM format, ensure that DICOM files are complete and data is valid (containing a full lung). Then convert DICOM data to Nifti. Initial QA tool is created by Riqiang Gao, link is [HERE](https://github.com/MASILab/QA_tool). A composite tool developed based on Riqiang's QA tool is included, need to use in conjunction with original tool. For fast processing, the composite tool can be wrapped differently to accommodate different data structure. 
+If data come in as DICOM format, ensure that DICOM files are complete and data is valid (containing a full lung). Then convert DICOM data to Nifti. Initial QA tool is created by Riqiang Gao, link is [HERE](https://github.com/MASILab/QA_tool). A composite tool developed based on Riqiang's QA tool is included, and it needs to be used in conjunction with the original tool. For fast processing, the composite tool can be wrapped differently to accommodate different data structure. 
 
 ## Step 2
 Segment lung from initial lung data.   
@@ -17,8 +19,8 @@ Command example:
 ```
 flirt -in invol -ref refvol -out outvol -dof 6
 ```
-* ANTs: set up ANTs environment and use SyNQuick. Read ```antsRegisterationSynQuick.sh``` and this [artical](https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call) for full command explanation.   
-Set "initial-moving-transform" to 0 for IMRT data; try different options under "initial-moving-transform" for desired results.  
+* ANTs: set up ANTs environment and use SyNQuick. Read this [artical](https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call) for full command explanation.   
+Read ```antsRegisterationSynQuick.sh``` and set "initial-moving-transform" to 0 for IMRT data. For other siturations, try different options under "initial-moving-transform" for desired results.  
 For faster registeration add```-t a```or ```-t r```after the command.  
 Command example:
 ```
