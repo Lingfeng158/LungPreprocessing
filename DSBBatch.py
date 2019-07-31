@@ -2,6 +2,12 @@
 rootpath='/home/local/VANDERBILT/lil18/Desktop/QA_tool/output2'
 #path of desired output directory
 output='/home/local/VANDERBILT/lil18/Desktop/out'
+"""
+Original DSB code works with a root data path with flat subfolders that contains nifti files.
+This is a wrapper that allows more complex data structures.
+It is currently set to process multiple "root data paths" at the same time.
+Can be modified easily to accommodate different data structures.
+"""
 
 
 import os
@@ -90,8 +96,10 @@ def QAPreprocess(datapath, preprocess_result_path, bbox_result_path):
 mkdir(output)
 dirlist=os.listdir(rootpath)   
 for i in dirlist:
+    #Selection rule
     if True:
         dirPath=os.path.join(rootpath,i)
+	#create output path for each folder as well for organization
         outputPath=os.path.join(output,i)
         mkdir(outputPath)
         #dirPath=os.path.join(dirPath,os.listdir(dirPath)[0])
