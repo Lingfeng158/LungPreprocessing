@@ -1,5 +1,5 @@
 # LungPreprocess
-A series of operation on raw lung data ensuring data quality.   
+A series of operations on raw lung data ensuring data quality.   
 Created by Lingfeng 31/07/2019. Email lingfeng.li@vanderbilt.edu
 
 ## Step 1
