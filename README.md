@@ -11,6 +11,9 @@ If data come in as DICOM format, ensure that DICOM files are complete and data i
 Segment lung from initial lung data.   
 Accept Nifti files and process them to only includes lung for machine learning. Initial code is developed by Fangzhi Liao [HERE](https://github.com/lfz/DSB2017). An optimized version is included in DSBM folder and [HERE](https://github.com/MASILab/DSB2017), with bug fixes allowing higher success rate with uninterrupted processing even after encountered error. Dependency requirements are the same as original LFZ's DSB code. DSBBatch.py is a wrapper around DSBM, and allow for more convenient data processing with more complex data structure. It can be easily modified to suit different structures.
 
+### NOTICE
+At ```binarize_per_slice``` function of DSB at ```/preprocessing/step1.py```, change intensity threshold to achieve desired behavior for different lung images. The threshold should not exceed -200, as such value will lead to bad image quality and should not be lower than -800, for such value whil give too much details for creating masks. Higher value (-300 - -600) helps ignore artifact, thus is recommended.
+
 ## Step 2 Alternative
 Register one subject's lung data longitudinally with reference data (usually with high resolution and uses as benchmark).  
 Two options:  
