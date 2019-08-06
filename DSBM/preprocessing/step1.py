@@ -258,13 +258,15 @@ def step1_python(case_path):
     for i in range(iterations):
         if i==0:
             bwcp=np.copy(bw)
-        else:
+        elif(i*cut_step<len(bw)):
             pad=i*cut_step
             #print(pad)
             bwcp=bw[pad:]
             #print('cut',bwcp.shape)
             bwcp=np.pad(bwcp, ((pad, 0), (0,0), (0,0)), 'edge')
             #print('pad',bwcp.shape)
+        else:
+            break
         bwcp, flag = all_slice_analysis(bwcp, spacing, cut_num=0)
         #print(i,flag)
         if(flag!=0):
