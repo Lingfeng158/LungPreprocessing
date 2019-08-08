@@ -2,7 +2,7 @@
 A series of operations on raw lung data ensuring data quality.   
 Created by Lingfeng Li  
 Email: lingfeng.li@vanderbilt.edu  
-Last edit:  31/07/2019.
+Last edit:  08/08/2019.
 
 ## Step 1
 If data come in as DICOM format, ensure that DICOM files are complete and data is valid (containing a full lung). Then convert DICOM data to Nifti. Initial QA tool is created by Riqiang Gao, link is [HERE](https://github.com/MASILab/QA_tool). A composite tool developed based on Riqiang's QA tool is included, and it needs to be used in conjunction with the original tool. For fast processing, the composite tool can be wrapped differently to accommodate different data structure. 
@@ -29,3 +29,14 @@ Command example:
 ```
 antsRegistrationSyNQuick.sh -d 3 -f path-to-ref -m path-to-mov -o output-prefix
 ```
+
+In order to change default value for padding, assume the moving image is called ```mov.nii.gz``` and fixed image is called ```fix.nii.gz``` and output prefix is ``` OPT```.  
+
+Output of ```antsRegistrationSyNQuick.sh``` will then be ```OPTWarped.nii.gz, OPTInverseWarped.nii.gz, OPT1Warped.nii.gz, OPT1InverseWarped.nii.gz``` and ```OPT0GenericAffine.mat```, and we would like pad value to be 170. 
+
+The commend needed would be 
+``` 
+antsApplyTransforms -d 3 -r fixed.nii.gz -i mov.nii.gz -o outputName.nii.gz -t OPT1Warp.nii.gz -t OPT0GenericAffine.mat -f 170
+```
+
+Note: ```-v``` flag instead of ```-f``` flag if using older version of ANTs
